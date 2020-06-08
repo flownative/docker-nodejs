@@ -9,9 +9,6 @@ LABEL org.label-schema.vendor="Flownative GmbH"
 # Node.js
 # Latest versions: https://packages.debian.org/buster/nodejs
 
-ARG NODEJS_VERSION
-ENV NODEJS_VERSION ${NODEJS_VERSION}
-
 ENV FLOWNATIVE_LIB_PATH=/opt/flownative/lib \
     NODEJS_BASE_PATH=/opt/flownative/nodejs \
     PATH="/opt/flownative/nodejs/bin:$PATH" \
@@ -21,7 +18,7 @@ USER root
 COPY --from=docker.pkg.github.com/flownative/bash-library/bash-library:1 /lib $FLOWNATIVE_LIB_PATH
 
 RUN install_packages \
-    nodejs=${NODEJS_VERSION}
+    nodejs
 
 COPY root-files /
 RUN /build.sh

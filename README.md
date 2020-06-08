@@ -61,9 +61,7 @@ Build this image with `docker build`. You need to specify the desired
 version for some of the tools as build arguments:
 
 ```bash
-docker build \
-    --build-arg NODEJS_VERSION=10.19.0~dfsg1-1 \
-    -t flownative/nodejs:latest .
+docker build -t flownative/nodejs:latest .
 ```
 
 Check the latest stable release on the tool's respective websites:
