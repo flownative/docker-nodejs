@@ -1,6 +1,6 @@
-FROM docker.pkg.github.com/flownative/docker-base/base:buster
-MAINTAINER Robert Lemke <robert@flownative.com>
+FROM docker.pkg.github.com/flownative/docker-base/base:bullseye
 
+LABEL org.opencontainers.image.authors="Robert Lemke <robert@flownative.com>"
 LABEL org.label-schema.name="Flownative Node.js"
 LABEL org.label-schema.description="Docker image providing Node.js"
 LABEL org.label-schema.vendor="Flownative GmbH"
@@ -15,7 +15,7 @@ ENV FLOWNATIVE_LIB_PATH=/opt/flownative/lib \
     LOG_DEBUG=false
 
 USER root
-COPY --from=docker.pkg.github.com/flownative/bash-library/bash-library:1 /lib $FLOWNATIVE_LIB_PATH
+COPY --from=europe-docker.pkg.dev/flownative/docker/bash-library:1.13.3 /lib $FLOWNATIVE_LIB_PATH
 
 RUN install_packages \
     nodejs
