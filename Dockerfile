@@ -1,4 +1,4 @@
-FROM docker.pkg.github.com/flownative/docker-base/base:bullseye
+FROM europe-docker.pkg.dev/flownative/docker/base:bullseye
 
 LABEL org.opencontainers.image.authors="Robert Lemke <robert@flownative.com>"
 LABEL org.label-schema.name="Flownative Node.js"
