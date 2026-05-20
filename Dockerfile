@@ -1,4 +1,4 @@
-FROM europe-docker.pkg.dev/flownative/docker/base:bookworm
+FROM harbor.flownative.io/docker/base:bookworm
 
 LABEL org.opencontainers.image.authors="Robert Lemke <robert@flownative.com>"
 LABEL org.label-schema.name="Flownative Node.js"
@@ -15,7 +15,7 @@ ENV FLOWNATIVE_LIB_PATH=/opt/flownative/lib \
     LOG_DEBUG=false
 
 USER root
-COPY --from=europe-docker.pkg.dev/flownative/docker/bash-library:1.13.5 /lib $FLOWNATIVE_LIB_PATH
+COPY --from=harbor.flownative.io/docker/bash-library:1.13.5 /lib $FLOWNATIVE_LIB_PATH
 
 RUN install_packages \
     nodejs
